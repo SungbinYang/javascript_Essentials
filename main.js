@@ -1,4 +1,5 @@
 import getType from './getType';
+import random from './getRandom';
 
 console.log(typeof 'Hello World!'); // string
 console.log(typeof 123); // number
@@ -78,3 +79,19 @@ if (a4) {
 }
 
 console.log(a ? '참' : '거짓');
+
+// 조건문 (If statement)
+
+console.log(random());
+
+const a5 = random();
+
+if (a5 === 0) {
+    console.log('a is 0');
+} else if (a5 === 2) {
+    console.log('a is 2');
+} else if (a5 === 4) {
+    console.log('a is 4');
+} else {
+    console.log('rest...');
+}
