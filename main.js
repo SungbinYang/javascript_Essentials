@@ -66,3 +66,15 @@ console.log(c);
 console.log('&&: ', a3 && c);
 console.log('||: ', a3 || b3 || c);
 console.log('!: ', !a3);
+
+// 삼항 연산자(ternary operator)
+
+const a4 = 1 < 2;
+
+if (a4) {
+    console.log('참');
+} else {
+    console.log('거짓');
+}
+
+console.log(a ? '참' : '거짓');
