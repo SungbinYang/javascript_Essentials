@@ -128,3 +128,15 @@ for (let i = 0; i < 10; i += 1) {
     }
     ulEl.appendChild(li);
 }
+
+// 변수 유효범위(Variable Scope)
+// var, let, const
+
+function scope() {
+    if (true) {
+        var a6 = 123;
+    }
+    console.log(a6);
+}
+
+scope();
