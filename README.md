@@ -8,3 +8,4 @@
    * 삼항 연산자
    * 조건문 if ~ else
    * switch문
+   * 반복문 for
