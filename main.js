@@ -81,10 +81,25 @@ if (a4) {
 console.log(a ? '참' : '거짓');
 
 // 조건문 (If statement)
+// 조건문 (Switch statement)
 
 console.log(random());
 
 const a5 = random();
+
+switch (a5) {
+    case 0:
+        console.log('a is 0');
+        break;
+    case 2:
+        console.log('a is 2');
+        break;
+    case 4:
+        console.log('a is 4');
+        break;
+    default:
+        console.log('rest...');
+}
 
 if (a5 === 0) {
     console.log('a is 0');
