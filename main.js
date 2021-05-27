@@ -140,3 +140,20 @@ function scope() {
 }
 
 scope();
+
+// 형 변환(Type Conversion)
+
+const a7 = 1;
+const b4 = '1';
+
+console.log(a7 === b4);
+
+// Truthy(참 같은 값)
+// true, {}, [], 1, 2, 'false', -12, '3.14'...
+
+// Falsy(거짓 같은 값)
+// false, '', null, undefined, 0, -0, NaN
+
+if (NaN) {
+    console.log(123);
+}
