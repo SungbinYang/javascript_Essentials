@@ -9,3 +9,6 @@
    * 조건문 if ~ else
    * switch문
    * 반복문 for
+   * 변수 유효범위
+      * let, const : 블록레벨
+      * var : 함수레벨
