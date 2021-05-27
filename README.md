@@ -12,3 +12,8 @@
    * 변수 유효범위
       * let, const : 블록레벨
       * var : 함수레벨
+   * 형 변환
+      * Truthy(참 같은 값)
+      * true, {}, [], 1, 2, 'false', -12, '3.14'...
+      * Falsy(거짓 같은 값)
+      * false, '', null, undefined, 0, -0, NaN
