@@ -5,3 +5,4 @@
    * 데이터 타입 확인하기 ( String, Number, Boolean, Object, Array, Null..)
    * 산술, 할당 연산자
    * 비교, 논리연산자
+   * 삼항 연산자
