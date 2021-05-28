@@ -243,3 +243,20 @@ h1El.addEventListener('click', () => {
     clearTimeout(timer);
     clearInterval(interval);
 });
+
+// 콜백(Callback)
+// 함수의 인수로 사용되는 함수
+// 어떠한 실행문을 보장하기 위해 사용을 많이한다.
+
+// setTimeout(함수, 시간)
+
+function timeout(callback) {
+    setTimeout(() => {
+        console.log('Test');
+        callback();
+    }, 3000);
+}
+
+timeout(() => {
+    console.log('Done!');
+});
