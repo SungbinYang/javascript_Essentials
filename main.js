@@ -178,3 +178,18 @@ const b5 = sum(4, 12);
 console.log(b5);
 console.log(sum(a8, b5));
 console.log(sub(1, 4));
+
+// 화살표 함수
+// () => {} vs function() {}
+
+const double = function(x) {
+    return x * 2;
+}
+
+console.log('double: ', double(7));
+
+const doubleArrow = x => ({
+    name: 'sungbin' + x
+});
+
+console.log('doubleArrow: ', doubleArrow(7));
