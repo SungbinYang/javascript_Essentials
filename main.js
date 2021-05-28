@@ -193,3 +193,22 @@ const doubleArrow = x => ({
 });
 
 console.log('doubleArrow: ', doubleArrow(7));
+
+// 즉시 실행함수
+// IIFE, Immediately-Invoked Function Expression
+
+const a9 = 7;
+
+function doubles() {
+    console.log(a9 * 2);
+}
+
+doubles();
+
+(function() { // IIFE
+    console.log(a9 * 2);
+})();
+
+(function() { // IIFE, 권장사항
+    console.log(a9 * 2);
+}());
