@@ -157,3 +157,24 @@ console.log(a7 === b4);
 if (NaN) {
     console.log(123);
 }
+
+// 함수 복습
+// 함수 사용시, 최대한 호출되는 횟수를 줄여라!
+// 반복적으로 사용시, 변수에 담아서 사용!
+
+function sum() { // 함수 선언방식
+    console.log(arguments);
+    return arguments[0] + arguments[1];
+}
+
+const sub = function(x, y) { // 익명함수, 함수 표현
+    return x - y;
+}
+
+const a8 = sum(7, 3);
+console.log(a8);
+
+const b5 = sum(4, 12);
+console.log(b5);
+console.log(sum(a8, b5));
+console.log(sub(1, 4));
