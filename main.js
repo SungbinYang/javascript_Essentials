@@ -260,3 +260,23 @@ function timeout(callback) {
 timeout(() => {
     console.log('Done!');
 });
+
+function User(first, last) { // 생성자 함수
+    this.firstName = first;
+    this.lastName = last;
+
+};
+
+// 프로토 타입
+User.prototype.getFullName = function() {
+    return `${this.firstName} ${this.lastName}`;
+}
+
+const sungbin = new User('Sungbin', 'Yang'); // 객체 데이터 생성
+const amy = new User("Amy", "Clarke"); // 객체 데이터 생성
+const neo = new User("Neo", 'Smith'); // 객체 데이터 생성
+
+// new라는 키워드를 통해서 생성자 함수로 실행한 결과를 반환을 할당한 변수를 인스턴스라고 한다. 
+console.log(sungbin.getFullName());
+console.log(amy.getFullName());
+console.log(neo.getFullName());
