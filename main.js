@@ -212,3 +212,34 @@ doubles();
 (function() { // IIFE, 권장사항
     console.log(a9 * 2);
 }());
+
+// 호이스팅(Hoisting)
+// 함수 선언부가 유효범위 최상단으로 끌어올려지는 현상
+
+const a10 = 7;
+
+doubleFnc(); // 호이스팅 :: 함수 선언은 아래에 작성했지만 호이스팅이 발생되어서 호출이 가능하다!
+
+function doubleFnc() {
+    console.log(a10 * 2);
+}
+
+// 타이머 함수
+// setTimeout(함수, 시간) : 일정 시간 후 함수 실행
+// setInterval(함수, 시간) : 시간 간격마다 함수 실행
+// clearTimeout() : 설정된 Timeout 함수를 종료
+// clearInterval() : 설정된 Interval 함수를 종료
+
+const timer = setTimeout(() => {
+    console.log('Sungbin!');
+}, 3000);
+
+const interval = setInterval(() => {
+    console.log('Sungbin!!!');
+}, 5000);
+
+const h1El = document.querySelector('h1');
+h1El.addEventListener('click', () => {
+    clearTimeout(timer);
+    clearInterval(interval);
+});
