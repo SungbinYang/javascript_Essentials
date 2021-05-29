@@ -446,6 +446,44 @@ console.log(str4.trim());
 
 
 // Number
+const pi = 3.14159265358979;
+console.log(pi);
+
+// toFixed() : 소수 몇째짜리까지 고정(유지)시키기 반환값은 string
+const str5 = pi.toFixed(2);
+console.log(str5);
+console.log(typeof str5);
+
+// parseInt : 강제로 정수형으로 변환 (전역 함수)
+// parseFloat : 강제로 실수로 변환 (전역 함수)
+const integer = parseInt(str5);
+const float = parseFloat(str5);
+console.log(integer);
+console.log(float);
+console.log(typeof integer, typeof float);
+
+// Math 내장 객체 : 수학적인 상수와 함수를 위한 속성과 메서드를 가진 내장 객체 -> Number 자료형만 지원가능하며 BigInt와 사용 불가
+// 절대값
+console.log('abs: ', Math.abs(-12));
+
+// 인수로 들어온 값중에 가장 작은 값 출력
+console.log('min: ', Math.min(2, 8));
+
+// 인수로 들어온 값중에 가장 큰 값 출력
+console.log('max: ', Math.max(2, 8));
+
+//정수 단위 올림 즉, 소수 첫째자리에서 올림
+console.log('ceil: ', Math.ceil(3.14));
+
+// 정수 단위 내림 즉, 소수 첫째자리에서 내림
+console.log('floor: ', Math.floor(3.14));
+
+// 정수단위 반올림 즉, 소수 첫째자리에서 반올림
+console.log('round: ', Math.round(3.14));
+
+// 0.xxxxx : xxx부분이 랜덤하게 나온 숫자가 나옴(난수)
+console.log('random: ', Math.random());
+
 // Boolean: true, false
 // undefined
 // null
