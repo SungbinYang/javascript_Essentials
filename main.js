@@ -610,3 +610,28 @@ console.log(person['email']);
 
 const values = keys.map(key => person[key]);
 console.log(values);
+
+// 구조 분해 할당(Destructuring assignment) :: 객체데이터를 구조분해해서 내가 원하는 속성만 꺼내서 사용가능
+// 비구조화 할당
+
+const student = {
+    name: 'Sungbin',
+    age: 26,
+    email: 'ysb05222@naver.com',
+    address: 'USA'
+}
+
+// address가 undefined일 경우 이런식으로 값을 최기화해서 사용이 가능하다
+// 하지만, 객체 속성에 이미 있으면 최기화해도 초기화된 값이 아니라 객체에 정의된 값이 들어간다.
+// 특정한 객체에서 어느 특정한 데이터를 꺼내올때 그 데이터의 특정한 속성 이름을 적어주고 활용할때 :를 사용하여 이름을 재정의 해준다.
+const { name: lini, age, address = 'Korea' } = student;
+// E.g, student.address
+
+console.log(`사용자의 이름은 ${lini}입니다.`);
+console.log(`${name}의 나이는 ${age}세입니다.`);
+console.log(`${name}의 이메일 주소는 ${student.email}입니다.`);
+console.log(address); // Korea
+
+// 배열데이터도 구조 분해 할당이 가능하다.
+const [, , b0] = fruits; // 특정 배열원소를 출력하고 싶을때 원하는 원소까지 남기고 그 전에는 ,로 대신한다.
+console.log(b0);
