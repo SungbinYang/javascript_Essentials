@@ -575,3 +575,38 @@ fruits.splice(2, 0, 'Orange');
 console.log(fruits);
 
 // Object: {}
+// Object.assign() : 열거할수 있는 하나이상의 출처 객체로부터 대상객체로 속성을 복사할때 사용
+const userAge = {
+    // key: value
+    name: 'Sungbin',
+    age: 26
+}
+
+const userEmail = {
+    name: 'Sungbin',
+    email: 'ysb05222@gmail.com'
+}
+
+const target = Object.assign({}, userAge, userEmail); // 정적 메소드
+console.log(target);
+console.log(userAge);
+console.log(target === userAge);
+
+const o = { k: 123 };
+const p = { k: 123 };
+console.log(o === p);
+
+// Object.keys() :: 갹체의 키값을 반환한다. 반환 값은 배열이다.
+const person = {
+    name: 'Sungbin',
+    age: 26,
+    email: 'ysb05222@gmail.com'
+}
+
+const keys = Object.keys(person);
+console.log(keys);
+
+console.log(person['email']);
+
+const values = keys.map(key => person[key]);
+console.log(values);
