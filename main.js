@@ -379,3 +379,37 @@ const pinch = new Player('Pinch', 'kakao');
 console.log(bob);
 console.log(lion.getFullName());
 console.log(pinch.getFullName());
+
+// 상속
+class Vehicle {
+    constructor(name, wheel) {
+        this.name = name;
+        this.wheel = wheel;
+    }
+}
+
+const myVehicle = new Vehicle('운송수단', 2);
+console.log(myVehicle);
+
+class Bicycle extends Vehicle {
+    constructor(name, wheel) {
+        super(name, wheel);
+    }
+}
+
+const myBicycle = new Bicycle('삼천리', 2);
+const daughterBicycle = new Bicycle('세발자전거', 3);
+console.log(myBicycle);
+console.log(daughterBicycle);
+
+class Car extends Vehicle {
+    constructor(name, wheel, licence) {
+        super(name, wheel);
+        this.licence = licence;
+    }
+}
+
+const myCar = new Car('벤츠', 4, true);
+const daughtersCar = new Car('포르쉐', 4, false);
+console.log(myCar);
+console.log(daughtersCar);
