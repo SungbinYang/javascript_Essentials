@@ -34,6 +34,12 @@
 
 ## JS 데이터
   * 문자
+    * String.length
+    * String.prototype.indexOf()
+    * String.prototype.slice()
+    * String.prototype.replace()
+    * String.prototype.match()
+    * String.prototype.trim()
   * 숫자와 수학
   * 배열
   * 객체
