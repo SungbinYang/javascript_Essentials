@@ -635,3 +635,13 @@ console.log(address); // Korea
 // 배열데이터도 구조 분해 할당이 가능하다.
 const [, , b0] = fruits; // 특정 배열원소를 출력하고 싶을때 원하는 원소까지 남기고 그 전에는 ,로 대신한다.
 console.log(b0);
+
+// 전개 연산자(Spread)
+const toys = ['Apple', 'Banana', 'Cherry', 'Orange'];
+console.log(toys);
+console.log(...toys); // ...는 전개 연산자 기호이고, 배열데이터를 ,로 구분하는 item으로 나타나서 출력하게 된다. 출력결과는 아래와 같다.
+// console.log('Apple', 'Banana', 'Cherry')
+
+/// ...c : rest parameter (나머지 매개변수)
+const toObject = (a, b, ...c) => ({ a, b, c });
+console.log(toObject(...toys));
