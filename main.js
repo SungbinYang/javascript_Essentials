@@ -413,3 +413,41 @@ const myCar = new Car('벤츠', 4, true);
 const daughtersCar = new Car('포르쉐', 4, false);
 console.log(myCar);
 console.log(daughtersCar);
+
+// JS 데이터
+
+// String: "", '', `` // 리터럴 방식(데이테럴 손쉽게 만드는 방식) or new String()
+// String.prototype.indexOf()
+const result1 = 'Hello world'.indexOf('sungbin');
+console.log(result1);
+
+const str1 = '0123';
+console.log(str1.length);
+
+const str2 = 'Hello World!';
+console.log(str2.indexOf('sungbin') !== -1);
+
+// slice는 문자열을 자르는 메소드로 1번째 인수는 시작 2번째 인수는 마자막 인수 전까지 출력을 한다.
+// 두번째 인수는 옵션이다. 없으면 끝까지
+// String.prototype.slice() : 문자열의 일부를 추출하면서 새로운 문자열을 반환
+console.log(str2.slice(6, 11));
+
+// replace는 첫번째 인수의 문자를 2번째 인수의 문자로 바꿔주는 기능을 한다.
+console.log(str2.replace(' World!', ''));
+
+// match : 정규식을 이용하여 특정한 문자데이터를 추출하는데 반환이 배열이다. 배열의 첫번재가 원하는 결과가 있다.
+// 정규표현식(RegExp 이용)
+const str3 = 'ysb05222@gmail.com';
+console.log(str3.match(/.+(?=@)/)[0]);
+
+// trim: 앞 뒤 공백 제거
+const str4 = '      Hello World!        ';
+console.log(str4.trim());
+
+
+// Number
+// Boolean: true, false
+// undefined
+// null
+// Array: []
+// Object: {}
