@@ -41,6 +41,16 @@
     * String.prototype.match()
     * String.prototype.trim()
   * 숫자와 수학
+    * Number.toFixed()
+    * parseInt()
+    * parseFloat()
+    * Math.abs()
+    * Math.ceil()
+    * Math.floor()
+    * Math.round()
+    * Math.min()
+    * Math.max()
+    * Math.random()
   * 배열
   * 객체
   * 구조 분해 할당
