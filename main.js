@@ -264,7 +264,6 @@ timeout(() => {
 function User(first, last) { // 생성자 함수
     this.firstName = first;
     this.lastName = last;
-
 };
 
 // 프로토 타입
@@ -272,11 +271,67 @@ User.prototype.getFullName = function() {
     return `${this.firstName} ${this.lastName}`;
 }
 
-const sungbin = new User('Sungbin', 'Yang'); // 객체 데이터 생성
-const amy = new User("Amy", "Clarke"); // 객체 데이터 생성
-const neo = new User("Neo", 'Smith'); // 객체 데이터 생성
+const sungbin = new User('Sungbin', 'Yang'); // new 연산자를 통해 생성자 함수 User를 통하여 객체 데이터 생성
+const amy = new User("Amy", "Clarke"); // new 연산자를 통해 생성자 함수 User를 통하여 객체 데이터 생성
+const neo = new User("Neo", 'Smith'); // new 연산자를 통해 생성자 함수 User를 통하여 객체 데이터 생성
 
 // new라는 키워드를 통해서 생성자 함수로 실행한 결과를 반환을 할당한 변수를 인스턴스라고 한다. 
+// 프로토 타입 메소드를 참조하는 형식이다.
 console.log(sungbin.getFullName());
 console.log(amy.getFullName());
 console.log(neo.getFullName());
+
+// this
+// 일반(Normal) 함수는 호출 위치에 따라 this 정의
+// 화살표(Arrow) 함수는 자신이 선언된 함수 범위에서 this 정의
+
+const jacob = {
+    name: 'Jacob',
+    normal: function() {
+        console.log(this.name); // 여기서 this는 호출된 함수의 앞의 부분
+    },
+    arrow: () => {
+        // console.log(this.name); // undefinded
+    }
+}
+
+jacob.normal();
+jacob.arrow();
+
+const sam = {
+    name: 'Sam',
+    normal: jacob.normal,
+    arrow: jacob.arrow
+}
+
+sam.normal();
+sam.arrow();
+
+function Users(name) { // 생성자 함수8
+    this.name = name;
+}
+
+Users.prototype.normal = function() {
+    console.log(this.name);
+}
+
+Users.prototype.arrow = () => {
+    console.log(this.name);
+}
+
+const bini = new Users('Bini');
+
+bini.normal();
+// bini.arrow(); // undefined
+
+const clock = {
+    name: 'digital',
+    timeout: function() {
+        // setTimeout(함수, 시간)
+        setTimeout(() => {
+            console.log(this.name);
+        }, 2000)
+    }
+}
+
+clock.timeout();
