@@ -52,6 +52,10 @@
     * Math.max()
     * Math.random()
   * 배열
+    * Array.prototype.length
+    * Array.prototype.concat()
+    * Array.prototype.forEach()
+    * Array.prototype.map()
   * 객체
   * 구조 분해 할당
   * 전개 연산자
