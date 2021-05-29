@@ -487,5 +487,91 @@ console.log('random: ', Math.random());
 // Boolean: true, false
 // undefined
 // null
-// Array: []
+// Array: [] : 배열 데이터의 특정한 위치를 가르키는 것을 인덱스라고 한다.
+// 각각의 배열 데이터 1개 1개를 요소라고 한다.(element or item)
+// length
+const numbers = [1, 2, 3, 4];
+const fruits = ['Apple', 'Banana', 'Cherry'];
+
+console.log(numbers[1]); // 인덱싱
+console.log(fruits[2]); // 인덱싱
+
+console.log(numbers.length);
+console.log(fruits.length);
+console.log([1, 2].length);
+
+console.log([].length); // 0
+
+// concat() : 2개의 배열데이터를 병합해서 새로운 배열을 만든다.
+// 원본의 데이터는 손상되지 않는다.
+console.log(numbers.concat(fruits));
+console.log(numbers);
+console.log(fruits);
+
+// forEach() : 일종의 for문 :: 반환값이 없다.
+fruits.forEach(function(item, index) {
+    console.log(item, index);
+});
+
+// map() : 일종의 forEach와 비슷하다. 반환형태가 배열이다. 새로운 배열을 만들어준다. 원본 훼손 x
+const x = fruits.forEach((fruit, index) => {
+    console.log(`${fruit}-${index}`);
+});
+console.log(x); // undefined
+
+const y = fruits.map((fruit, index) => ({
+    id: index,
+    name: fruit
+}));
+console.log(y); // 배열형태로 반환
+
+// filter() :: 조건에 해당되는 element들만 새로운 배열 형태로 반환한다. 원본 훼손 x
+const q = numbers.map(number => number < 3);
+console.log(q);
+
+const w = numbers.filter(number => number < 3);
+console.log(w);
+
+console.log(numbers);
+
+// find(), findIndex() 
+// find는 특정한 원소를 찾으면 찾음을 중단하고 찾은 element를 반환한다.
+const e = fruits.find(fruit => /^C/.test(fruit));
+console.log(e);
+
+const r = fruits.findIndex(fruit => /^C/.test(fruit));
+console.log(r);
+
+// includes() : 인수에 포함이 되어있는지 확인후 Boolean형으로 반환
+const t = numbers.includes(3);
+console.log(t);
+
+const u = fruits.includes('Sungbin');
+console.log(u);
+
+// push(), unshift()
+// 원본 수정됨 주의!
+
+numbers.push(5); // 가장 마지막에 인수를 넣어서 반환한다.
+console.log(numbers);
+
+numbers.unshift(0); // 가장 처음에 인수를 넣어서 반환한다.
+console.log(numbers);
+
+// reverse() : 원소를 역으로 ..
+// 원본수정됨 주의!
+numbers.reverse();
+fruits.reverse();
+
+console.log(numbers);
+console.log(fruits);
+
+// splice() :: 첫번 째 인수는 배열 데이터의 인덱스 값이고 두번째 인수는 인덱스번호에서 아이템을 1개만 지워라는 의미
+// 원본 수정됨
+numbers.splice(2, 1, 999); // 999데이터를 인데스 번호에 추가해라
+console.log(numbers);
+
+fruits.splice(2, 0, 'Orange');
+console.log(fruits);
+
 // Object: {}
