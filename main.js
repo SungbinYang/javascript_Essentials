@@ -335,3 +335,47 @@ const clock = {
 }
 
 clock.timeout();
+
+// ES6 Classes
+
+const tom = {
+    name: 'Tom',
+    normal() {
+        console.log(this.name);
+    },
+    arrow: () => {
+        console.log(this.name)
+    }
+}
+
+tom.normal();
+// tom.arrow();
+
+// function Player(first, last) {
+//     this.firstName = first;
+//     this.lastName = last;
+// }
+
+// Player.prototype.getFullName = function() {
+//     return `${this.firstName} ${this.lastName}`;
+// }
+
+// ES6 Class 문법
+class Player {
+    constructor(first, last) {
+        this.firstName = first;
+        this.lastName = last;
+    }
+
+    getFullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+
+const bob = new Player('Bob', 'Yarn');
+const lion = new Player('Lion', 'Kakao');
+const pinch = new Player('Pinch', 'kakao');
+
+console.log(bob);
+console.log(lion.getFullName());
+console.log(pinch.getFullName());
