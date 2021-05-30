@@ -621,15 +621,15 @@ const student = {
     address: 'USA'
 }
 
-// address가 undefined일 경우 이런식으로 값을 최기화해서 사용이 가능하다
+// address가 undefined일 경우 이런식으로 값을 초기화해서 사용이 가능하다
 // 하지만, 객체 속성에 이미 있으면 최기화해도 초기화된 값이 아니라 객체에 정의된 값이 들어간다.
 // 특정한 객체에서 어느 특정한 데이터를 꺼내올때 그 데이터의 특정한 속성 이름을 적어주고 활용할때 :를 사용하여 이름을 재정의 해준다.
 const { name: lini, age, address = 'Korea' } = student;
 // E.g, student.address
 
 console.log(`사용자의 이름은 ${lini}입니다.`);
-console.log(`${name}의 나이는 ${age}세입니다.`);
-console.log(`${name}의 이메일 주소는 ${student.email}입니다.`);
+console.log(`${lini}의 나이는 ${age}세입니다.`);
+console.log(`${lini}의 이메일 주소는 ${student.email}입니다.`);
 console.log(address); // Korea
 
 // 배열데이터도 구조 분해 할당이 가능하다.
@@ -640,8 +640,37 @@ console.log(b0);
 const toys = ['Apple', 'Banana', 'Cherry', 'Orange'];
 console.log(toys);
 console.log(...toys); // ...는 전개 연산자 기호이고, 배열데이터를 ,로 구분하는 item으로 나타나서 출력하게 된다. 출력결과는 아래와 같다.
-// console.log('Apple', 'Banana', 'Cherry')
+// console.log('Apple', 'Banana', 'Cherry', 'Orange')
 
-/// ...c : rest parameter (나머지 매개변수)
+/// ...c : rest parameter (나머지 매개변수) :: Apple은 a Banana는 b 나머지는 c로 들어간다.
+// 속성의 이름과 변수의 이름이 같으면 속성의 이름만 남겨놓는다. ex) a,b,c
 const toObject = (a, b, ...c) => ({ a, b, c });
 console.log(toObject(...toys));
+
+// 데이터 불변성
+let v1 = 1;
+let v2 = 4;
+console.log(v1, v2, v1 === v2);
+
+v2 = v1;
+console.log(v1, v2, v1 === v2);
+
+v1 = 7;
+console.log(v1, v2, v1 === v2);
+let v3 = 1; // 기존의 1인 메모리 영역을 가르킨다. // 원시데이터는 새롭게 만들어지는것이 아니고 불변한다.
+console.log(v2, v3, v2 === v3);
+
+// 데이터 가변성
+let n1 = { k: 1 };
+let n2 = { k: 1 };
+console.log(n1, n2, n1 === n2);
+
+n1.k = 7;
+n2 = n1; // 복사되는것이 아니고 포인터가 가르키는 주소만 바뀌는것이다. :: 복사를 하고 싶으면 복사개념을 사용해야한다.
+console.log(n1, n2, n1 === n2);
+n1.k = 2;
+console.log(n1, n2, n1 === n2);
+let n3 = n2;
+console.log(n1, n2, n3, n1 === n3);
+n1.k = 9;
+console.log(n1, n2, n3, n1 === n3);
