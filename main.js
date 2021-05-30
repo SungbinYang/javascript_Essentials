@@ -2,6 +2,7 @@ import getType from './getType'; // getType.js
 import { random, users as sungbins } from './getRandom'; // getRandom.js
 import * as R from './getRandom';
 import _ from 'lodash'; // Fron node_modules
+import myData from './myData.json';
 
 console.log(typeof 'Hello World!'); // string
 console.log(typeof 123); // number
@@ -743,3 +744,25 @@ console.log(foundTeacherIndex);
 
 _.remove(teachers, { name: 'Sungbin' });
 console.log(teachers);
+
+// JSON (Javascript Object Notation) :: JSON은 문자 데이터다.
+// 자바스크립트의 객체 표기법
+
+console.log(myData);
+
+const friend = { // 객체 데이터
+    name: 'Sungbin',
+    age: 26,
+    emails: [
+        'ysb05222@naver.com',
+        'ysb05222@gmail.com'
+    ]
+}
+console.log('friend', friend);
+
+const str6 = JSON.stringify(friend);
+console.log('str6', str6);
+console.log(typeof str6);
+
+const objective = JSON.parse(str6);
+console.log('objectice', objective);
