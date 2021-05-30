@@ -3,6 +3,7 @@ import { random, users as sungbins } from './getRandom'; // getRandom.js
 import * as R from './getRandom';
 import _ from 'lodash'; // Fron node_modules
 import myData from './myData.json';
+import axios from 'axios';
 
 console.log(typeof 'Hello World!'); // string
 console.log(typeof 123); // number
@@ -782,9 +783,22 @@ const teller = {
 
 const str7 = localStorage.getItem('teller');
 const obj1 = JSON.parse(str7);
-obj1.age = 22;
+// obj1.age = 22;
 console.log(obj1);
 
 localStorage.setItem('teller', JSON.stringify(obj1));
 
 localStorage.removeItem('teller');
+
+// axios와 oMDb를 이용하여 영화 정보 호출
+function fetchMovies() {
+    axios.get('http://www.omdbapi.com/?apikey=7035c60c&s=avengers').then(res => {
+        console.log(res);
+        const h1Els = document.querySelector('h1');
+        const imgEls = document.querySelector('img');
+        h1Els.textContent = res.data.Search[0].Title;
+        imgEls.src = res.data.Search[0].Poster;
+    });
+}
+
+fetchMovies();
