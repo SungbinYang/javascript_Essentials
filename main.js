@@ -766,3 +766,25 @@ console.log(typeof str6);
 
 const objective = JSON.parse(str6);
 console.log('objectice', objective);
+
+// storage
+const teller = {
+    name: 'Sungbin',
+    age: 26,
+    emails: [
+        'ysb05222@naver.com',
+        'ysb05222@gmail.com'
+    ]
+}
+
+// localStorage.setItem('teller', JSON.stringify(teller));
+// console.log(JSON.parse(localStorage.getItem('teller')));
+
+const str7 = localStorage.getItem('teller');
+const obj1 = JSON.parse(str7);
+obj1.age = 22;
+console.log(obj1);
+
+localStorage.setItem('teller', JSON.stringify(obj1));
+
+localStorage.removeItem('teller');
