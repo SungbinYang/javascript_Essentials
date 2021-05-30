@@ -708,3 +708,38 @@ console.log(getType([1, 2, 3]));
 console.log(random(), random());
 console.log(sungbins);
 console.log(R);
+
+// lodash
+
+const usersA = [
+    { userId: '1', name: 'Sungbin' },
+    { userId: '2', name: 'Neo' }
+];
+
+const usersB = [
+    { userId: '1', name: 'Sungbin' },
+    { userId: '3', name: 'Amy' }
+];
+
+const usersC = usersA.concat(usersB);
+console.log('concat: ', usersC);
+console.log('uniqBy: ', _.uniqBy(usersC, 'userId')); // userId 중복값 제거
+
+const usersD = _.unionBy(usersA, usersB, 'userId'); // 중복제거 후, 합친다.
+console.log('unionBy', usersD);
+
+const teachers = [
+    { userId: '1', name: 'Sungbin' },
+    { userId: '2', name: 'Neo' },
+    { userId: '3', name: 'Amy' },
+    { userId: '4', name: 'Evan' },
+    { userId: '5', name: 'Lewis' }
+];
+
+const foundTeacher = _.find(teachers, { name: 'Amy' }); // 해당되는 객체데이터를 반환한다,
+const foundTeacherIndex = _.findIndex(teachers, { name: 'Amy' }); // 해당되는 객체 데이터의 인덱스를 반환한다.
+console.log(foundTeacher);
+console.log(foundTeacherIndex);
+
+_.remove(teachers, { name: 'Sungbin' });
+console.log(teachers);
