@@ -1,5 +1,6 @@
 import getType from './getType';
 import random from './getRandom';
+import _ from 'lodash';
 
 console.log(typeof 'Hello World!'); // string
 console.log(typeof 123); // number
@@ -674,3 +675,27 @@ let n3 = n2;
 console.log(n1, n2, n3, n1 === n3);
 n1.k = 9;
 console.log(n1, n2, n3, n1 === n3);
+
+// 얕은 복사(shallow copy) :: Object.assign or 전개연산자 , 깊은 복사(Deep copy) :: lodash 사용
+const thing = {
+    name: 'Rovert',
+    age: 26,
+    emails: ['ysb05222@naver.com']
+}
+
+// const copyThing = Object.assign({}, thing); // 복사의 개념 :: 의도하지 않았다면 참조형 데이터들은 복사의 개념을 사용하는것이 좋다.
+// const copyThing = {...thing }; // 전개 연산자를 통하여 복사하는 방식 (얕은 복사) :: 겉의 표면만 복사가 되고 안은 복사가 이루어지지 않았다.
+const copyThing = _.cloneDeep(thing); // 깊은 복사 :: 안의 속성까지 복사해서 새로운 객체가 복사된다.
+console.log(copyThing === thing);
+
+thing.age = 22;
+console.log('thing: ', thing);
+console.log('copyThing: ', copyThing);
+
+console.log('------');
+console.log('------');
+
+thing.emails.push('ysb05222@gmail.com'); // 이메일은 배열데이터를 따로 복사처리를 하지 않았다. 복사한것은 객체 데이터 1개이기 때문에 이메일은 같은 메모리주소를 공유
+console.log(thing.emails === copyThing.emails);
+console.log('thing: ', thing);
+console.log('copyThing: ', copyThing);
