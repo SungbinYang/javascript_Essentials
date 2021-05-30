@@ -1,6 +1,7 @@
-import getType from './getType';
-import random from './getRandom';
-import _ from 'lodash';
+import getType from './getType'; // getType.js
+import { random, users as sungbins } from './getRandom'; // getRandom.js
+import * as R from './getRandom';
+import _ from 'lodash'; // Fron node_modules
 
 console.log(typeof 'Hello World!'); // string
 console.log(typeof 123); // number
@@ -699,3 +700,11 @@ thing.emails.push('ysb05222@gmail.com'); // 이메일은 배열데이터를 따�
 console.log(thing.emails === copyThing.emails);
 console.log('thing: ', thing);
 console.log('copyThing: ', copyThing);
+
+// 가져오기, 내보내기
+// 기본통로로 내보내면 불러올때 원하는 이름으로 불러올수 있고, 하나의 데이터만 내보낼수 있지만 이름이 있는 통로로 내보내면 {}안에 원하는 이름을 작성 및 여러개를 내보낼 수 있음.
+console.log(_.camelCase('the hello world'));
+console.log(getType([1, 2, 3]));
+console.log(random(), random());
+console.log(sungbins);
+console.log(R);
